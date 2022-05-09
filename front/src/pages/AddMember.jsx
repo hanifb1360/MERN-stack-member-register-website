@@ -28,7 +28,7 @@ const defaultValue = {
   name: "",
   email: "",
   phone: "",
-  memberdate: "",
+  membershipDate: "",
   level: "",
 };
 
@@ -40,42 +40,43 @@ export const AddMember = () => {
   };
 
   const addMemberDetails = async () => {
+    console.log(member);
     await addMember(member);
   };
 
   return (
     <Container>
       <Typography variant="h5">Add Member</Typography>
-        <FormControl>
-          <InputLabel>Name</InputLabel>
-          <Input onChange={(e) => onValueChange(e)} name="name" />
-        </FormControl>
+      <FormControl>
+        <InputLabel>Name</InputLabel>
+        <Input onChange={(e) => onValueChange(e)} name="name" />
+      </FormControl>
 
-        <FormControl>
-          <InputLabel>E-mail</InputLabel>
-          <Input onChange={(e) => onValueChange(e)} name="email" />
-        </FormControl>
+      <FormControl>
+        <InputLabel>E-mail</InputLabel>
+        <Input onChange={(e) => onValueChange(e)} name="email" />
+      </FormControl>
 
-        <FormControl>
-          <InputLabel>Phone</InputLabel>
-          <Input onChange={(e) => onValueChange(e)} name="phone" />
-        </FormControl>
+      <FormControl>
+        <InputLabel>Phone</InputLabel>
+        <Input onChange={(e) => onValueChange(e)} name="phone" />
+      </FormControl>
 
-        <FormControl>
-          <InputLabel>Membership date</InputLabel>
-          <Input onChange={(e) => onValueChange(e)} name="membershipdate" />
-        </FormControl>
+      <FormControl>
+        <InputLabel>Membership date</InputLabel>
+        <Input onChange={(e) => onValueChange(e)} name="membershipDate" />
+      </FormControl>
 
-        <FormControl>
-          <InputLabel>Level</InputLabel>
-          <Input onChange={(e) => onValueChange(e)} name="level" />
-        </FormControl>
+      <FormControl>
+        <InputLabel>Level</InputLabel>
+        <Input onChange={(e) => onValueChange(e)} name="level" />
+      </FormControl>
 
-        <FormControl>
-          <BTN variant="outlined" onClick={() => addMemberDetails()}>
-            Submit
-          </BTN>
-        </FormControl>
+      <FormControl>
+        <BTN variant="outlined" onClick={() => addMemberDetails()}>
+          Submit
+        </BTN>
+      </FormControl>
     </Container>
   );
 };

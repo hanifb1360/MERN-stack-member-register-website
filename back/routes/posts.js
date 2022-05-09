@@ -55,7 +55,7 @@ const post = new Post({
         name: req.body.name,
         email: req.body.email,
         phone: req.body.phone,
-        membershipDate: req.body.membershipDate,
+        membershipDate: new Date(req.body.membershipDate),
         level: req.body.level
 });
 
