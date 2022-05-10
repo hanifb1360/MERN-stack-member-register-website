@@ -1,7 +1,36 @@
 import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 import { getData } from "../functions/functions";
+import styled from 'styled-components';
 
-let Members = (props) => {
+
+const Container = styled.div`
+display: flex;
+justify-content: center;
+flex-direction: column;
+color: white;
+margin-top: 20vh;
+margin-left: 5%;
+`
+const Title = styled.h1`
+
+color: #1D878C;
+margin-top: 3%;
+text-decoration: none;
+font-size: 5vh;
+
+
+
+`
+const Member = styled.h2`
+
+color: black;
+margin-top: 3%;
+text-decoration: none;
+
+`
+
+let Members = () => {
   let [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -11,20 +40,24 @@ let Members = (props) => {
   }, []);
 
   return (
-    <div>
+    <Container>
+    <Title>Our Members</Title>
       {posts &&
         posts.map((post) => {
           return (
-            <div
+
+            
+            <Link
               key={`member-${post._id}`}
-              style={{ border: "2px solid white" }}
+              style={{ text: "2px solid white"}}
+              to={`/details/${post._id}`}
             >
-              <h2>{post.name}</h2>
-              <p>{post.level}</p>
-            </div>
+              <Member>{post.name}</Member>
+              
+            </Link>
           );
         })}
-    </div>
+    </Container>
   );
 };
 

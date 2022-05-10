@@ -77,7 +77,6 @@ export const Navbar = () => {
       <TabBox>
          <StyledLink to='/'>Home</StyledLink>
          <StyledLink to='/all'>Members</StyledLink>
-         <StyledLink to='/details'>Member Details</StyledLink>
          <StyledLink to='/add'>Add Member</StyledLink>
       </TabBox>
 
