@@ -1,7 +1,7 @@
 import "./App.css";
 import { Navbar } from "./components/Navbar";
 import { AddMember } from "./pages/AddMember";
-import { MemberDetails } from "./pages/MemberDetails";
+import MemberDetails from "./pages/MemberDetails";
 import Members from "./pages/Members";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HomeContent } from "./components/HomeContent";

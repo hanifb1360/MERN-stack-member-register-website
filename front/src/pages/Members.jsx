@@ -4,6 +4,7 @@ import { getData } from "../functions/functions";
 import styled from 'styled-components';
 
 
+
 const Container = styled.div`
 display: flex;
 justify-content: center;
@@ -53,7 +54,7 @@ let Members = () => {
               to={`/details/${post._id}`}
             >
               <Member>{post.name}</Member>
-              
+               
             </Link>
           );
         })}
