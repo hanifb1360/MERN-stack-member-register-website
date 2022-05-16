@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const Post = require('../models/Post');
+const dayjs = require('dayjs')
 
+dayjs().format()
 // gets all the posts
 router.get('/', async (req, res) => {
     try{
@@ -40,7 +42,13 @@ router.delete('/:postId', async (req, res) => {
     try {
      const updatedPost = await Post.updateOne(
          { _id: req.params.postId }, 
-         { $set: {level: req.body.level}}
+         { $set: {
+             name: req.body.name,
+             level: req.body.level,
+             email: req.body.email,
+             phone: req.body.phone,
+             membershipDate: req.body.membershipDate
+         }}
          );
     res.json(updatedPost);
     } catch (err) {

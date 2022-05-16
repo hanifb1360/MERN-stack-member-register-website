@@ -11,20 +11,40 @@ export const addMember = async (data) => {
   }
 };
 
-export const getMembers = async (data) => {
-  console.log(data)
+// export const getMembers = async (data) => {
+//   console.log(data)
+//   try {
+//     return await axios.get(`${URL}/posts`, data);
+//   } catch (error) {
+//     console.log("Error while calling get members Api", error);
+//   }
+// };
+
+// export const getSpecificMember = async (data) => {
+//   console.log(data)
+//   try {
+//     return await axios.get(`${URL}/posts/postId`, data);
+//   } catch (error) {
+//     console.log("Error while calling get members Api", error);
+//   }
+// };
+
+export const deleteMember = async (user) => {
+
   try {
-    return await axios.get(`${URL}/posts`, data);
+    return await axios.delete(`${URL}/posts/${user._id}`);
   } catch (error) {
-    console.log("Error while calling get members Api", error);
+     console.log("Error while deleting member", error);
   }
 };
 
-export const getSpecificMember = async (data) => {
-  console.log(data)
+export const updateMember = async (user) => {
+  
   try {
-    return await axios.get(`${URL}/posts/postId`, data);
+    return await axios.patch(`${URL}/posts/${user._id}`, user);
   } catch (error) {
-    console.log("Error while calling get members Api", error);
+     console.log("Error while deleting member", error);
   }
 };
+
+

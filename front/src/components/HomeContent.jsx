@@ -38,7 +38,7 @@ export const HomeContent = () => {
   
       <Image src={image}/> 
       <Description>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget tincidunt eros. In laoreet efficitur quam, ac molestie sem semper eu. Fusce vitae quam in turpis varius sodales id in libero. Aliquam venenatis, lorem a tristique vehicula, dui nulla consequat leo, in malesuada nibh libero vel nunc. Duis pharetra, felis ut ornare condimentum, lacus urna consectetur erat, eget feugiat urna velit nec sapien. Integer eget facilisis lorem, nec suscipit dui. Vestibulum venenatis, eros sit amet lacinia placerat, neque enim viverra mi, ac sollicitudin velit dolor vel enim. Nullam in imperdiet mi, ut congue diam. Duis elit turpis, imperdiet sit amet placerat ac, molestie sit amet est. Proin vehicula eros in ante tincidunt aliquam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      On a hot summer day in 1995, two Swedish national table tennis champions from the Akalla neighborhood were talking in a café about how to get the neighborhood youth involved in table tennis and create a friendly atmosphere between neighbors. This is the beginning of our story, a story that continues. In this sports and cultural complex, we do our best to create a suitable environment for cultivating the talents of the youth of this neighborhood. The complex has several permanent sponsors, including Tetracell and Metrocancer, as well as government support, so membership in the group is free.
 
       </Description>
   

@@ -21,6 +21,8 @@ const PostSchema = mongoose.Schema({
   },
    membershipDate: {
     type: Date,
+    min: '1995-05-28',
+    max: '2021-05-23',
     required: true,
   },
    level: {
