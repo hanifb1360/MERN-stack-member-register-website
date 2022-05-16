@@ -18,6 +18,15 @@ const MemberBox = styled.div`
   margin-top: 5vh;
   width: 90%;
 `;
+const SecondMemberBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+
+  
+  
+  
+`;
 const Title = styled.h1`
   color: #1d878c;
   margin-top: 3%;
@@ -31,7 +40,17 @@ const Member = styled.h2`
 `;
 const Button = styled.button`
   color: black;
-  padding: 5px 20px;
+ height: 40px;
+ width: 100px;
+  border-radius: 20px;
+  background-color: gainsboro;
+  border: solid 1px black;
+`;
+const Button2 = styled.button`
+  color: black;
+ height: 40px;
+ width: 180px;
+ margin-left: 10px;
   border-radius: 20px;
   background-color: gainsboro;
   border: solid 1px black;
@@ -42,7 +61,13 @@ let Members = () => {
 
   useEffect(() => {
     getData("http://localhost:8000/posts").then((res) => {
-      setPosts(res);
+      const sortedPosts = res.sort(function(a, b) {
+        if(a.name.toLowerCase() < b.name.toLowerCase()) return -1;
+        if(a.name.toLowerCase() > b.name.toLowerCase()) return 1;
+        return 0;
+      })
+      setPosts(sortedPosts);
+
     });
   }, []);
 
@@ -53,6 +78,8 @@ let Members = () => {
         posts.map((post) => {
           return (
             <MemberBox>
+              
+              <SecondMemberBox>
               <Link
                 key={`member-${post._id}`}
                 style={{ text: "2px solid white" }}
@@ -60,14 +87,15 @@ let Members = () => {
               >
                 <Member>{post.name}</Member>
               </Link>
+              
               <Button onClick={() => deleteMember(post)}>Delete</Button>
-
+              </SecondMemberBox>
 
               <Link
                 key={`member-${post._id}`}
                 to={`/update/${post._id}`}
               >
-                <Button>Update Information</Button>
+                <Button2>Update Information</Button2>
               </Link>
               
             </MemberBox>
